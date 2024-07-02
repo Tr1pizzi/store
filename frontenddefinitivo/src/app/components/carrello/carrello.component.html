@@ -1,0 +1,25 @@
+<h1>Carrello</h1>
+
+<div class="carrello" *ngIf="!carrello">
+  <p>Nessun carrello presente!</p>
+</div>
+
+<div class="carrello" *ngIf="carrello">
+
+  <!--Scroll dei libri-->
+  <div class="Articolo">
+    <p *ngIf="carrello.importo== 0">Nessun Articolo nel carrello</p>
+  </div>
+
+
+
+  <div class="info">
+    <p>Totale: {{carrello.importo.toFixed(2)}}€</p>
+  </div>
+
+  <div class="buttons">
+    <button (click)="acquistaCarrello()">Acquista</button>
+    <button (click)="svuotaCarrello()">Svuota</button>
+  </div>
+</div>
+

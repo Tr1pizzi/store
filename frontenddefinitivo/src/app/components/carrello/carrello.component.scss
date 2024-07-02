@@ -1,0 +1,124 @@
+/* carrello.component.scss */
+
+.carrello {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+
+  .libri {
+    margin-bottom: 20px;
+
+    p {
+      font-size: 16px;
+      color: #666;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .infobox {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+          }
+        }
+
+        .quantita {
+          display: flex;
+          align-items: center;
+
+          button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+
+            &:hover {
+              background-color: #555;
+            }
+          }
+
+          span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    p {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+      background-color: #f00; /* Rosso Nike */
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #d00; /* Rosso scuro Nike */
+      }
+    }
+  }
+}

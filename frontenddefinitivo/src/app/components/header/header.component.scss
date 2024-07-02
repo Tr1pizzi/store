@@ -1,0 +1,158 @@
+@use "../../app.component" as app;
+
+
+header {
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  width: auto;
+  height: 100%;
+  margin-left: 1rem;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+header .logo:hover {
+  transform: scale(1.1);
+}
+
+header .logo span {
+  font-family: "Arial", sans-serif; /* Scegli un font sans-serif elegante, Arial può essere una buona scelta */
+  font-size: 2rem;
+  color: #e41d2d; /* Rosso Nike */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px; /* Spaziatura tra le lettere */
+}
+
+header nav {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+header nav .left-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-left: 1rem;
+}
+
+header nav .left-content > a {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  color: #000000; /* Cambiato il colore del testo a nero */
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: 0.4s;
+}
+
+header nav .left-content > a:hover {
+  color: #feda77;
+}
+
+header nav .right-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  margin-right: 1rem;
+}
+
+header nav .right-content > button {
+  border-radius: 0; /* Rimuove il bordo arrotondato */
+  color: #000000; /* Cambiato il colore del testo a nero */
+  font-size: 1.2rem;
+  transition: 0.4s;
+  margin-left: 1.5rem;
+}
+
+header nav .right-content > button:hover {
+  background-color: rgba(64, 93, 230, 0.1);
+}
+
+header nav .right-content > button:active {
+  transform: scale(1.1);
+}
+
+.dropdown button {
+  color: black;
+}
+
+header nav a, button, span {
+  text-decoration: none;
+  color: #000000; /* Cambiato il colore del testo a nero */
+  font-family: "Arial", sans-serif; /* Usa lo stesso font per uniformità */
+  font-size: 1rem;
+  font-weight: 800;
+  transition: 0.4s;
+}
+
+header nav a:hover, button:hover {
+  cursor: pointer;
+  color: #feda77;
+}
+
+header nav .spacer {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.login-container {
+  background: #ffffff;
+  position: absolute;
+  top:100%; /* Sposta il contenitore di login verso l'alto del 5% rispetto al bordo superiore */
+  //se lo tolgo lo sposta a sinistra
+  right: 0%; /* Sposta il contenitore di login verso destra del 5% rispetto al bordo destro */
+  width: 30vw;
+  height: 65vh;
+  border: 1px solid #0002;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+
+.close-button {
+  color: #000000;
+  position: absolute;
+  right: 0.4rem;
+  top: 0.4rem;
+}
+
+app-login {
+  width: 90%;
+  height: 90%;
+}
+
+.cart-container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 30vw;
+  height: 100vh;
+  background: #ffffff;
+  padding: 0.4rem;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Negozio Sportivo</title>
+
+  <!-- Collega il tuo file CSS -->
+  <link rel="stylesheet" href="negozio.scss">
+
+  <!-- Aggiungi altri link CSS se necessario -->
+</head>
+<body>
+<!-- Contenuto della pagina -->
+<mat-spinner *ngIf="!dataLoaded"></mat-spinner>
+<div class="negozioSportivo" *ngIf="dataLoaded">
+  <div class="ricerca">
+    <button [matMenuTriggerFor]="sort">
+      <fa-icon [icon]="faSort"></fa-icon>
+    </button>
+    <mat-menu #sort="matMenu">
+      <a mat-menu-item (click)="sortBynome()">Nome</a>
+      <a mat-menu-item (click)="sortByproduttore()">Produttore</a>
+      <a mat-menu-item (click)="sortByPrezzo()">Prezzo</a>
+      <a mat-menu-item (click)="sortByQuantita()">Quantita</a>
+    </mat-menu>
+
+    <div class="spacer"></div>
+    <input [(ngModel)]="ricerca" placeholder="Cerca..." type="text" (ngModelChange)="cercaPernome()">
+    <a (click)="cercaPernome()">
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </a>
+  </div>
+
+  <div class="scaffale">
+    <div class="articoli" *ngFor="let Articolo of ListaArticoli">
+      <div class="head">
+        <div class="title">
+          <h2>{{Articolo.nomeArticolo}}</h2>
+          <h3>di {{Articolo.produttore}}</h3>
+        </div>
+        <div class="right-bar">
+          <p>{{Articolo.etaMinima}}+</p>
+        </div>
+      </div>
+      <div class="description">
+        <p [id]="'descrizione-'+Articolo.id">{{Articolo.descrizione}}</p>
+        <a [id]="'show-'+Articolo.id" (click)="ampliaDescrizione(Articolo.id)">Mostra di più...</a>
+      </div>
+      <div class="info">
+        <p>{{Articolo.prezzo.toFixed(2)}}€</p>
+        <p>{{Articolo.quantita}} in stock</p>
+      </div>
+      <div class="buttons">
+        <button class="acquista" *ngIf="isLoggedIn" (click)="aggiungiArticolo(Articolo.id)">
+          Aggiungi al Carrello <!-- Loggato -->
+        </button>
+        <button class="acquista" *ngIf="isLoggedIn" (click)="rimuoviArticolo(Articolo.id)">
+          Rimuovi dal Carrello <!-- Loggato -->
+        </button>
+        <button class="acquista" *ngIf="!isLoggedIn" (click)="alertNotLogged()">
+          Aggiungi al Carrello <!--Non Loggato-->
+        </button>
+      </div>
+      <p>ISBN: {{Articolo.id + 9788800000000}}</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

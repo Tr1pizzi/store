@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: wheat;
+  font-family: "Euphemia UCAS", sans-serif;
+}
+
+.azienda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.image img {
+  width: 100%;
+  max-width: 800px; /* Increase the maximum width */
+  height: auto;
+}
+
+.text {
+  margin: 10px 0;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .area {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .area .text {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .area .image {
+    flex: 1;
+  }
+
+  .area:nth-child(odd) .text {
+    order: 2;
+  }
+
+  .area:nth-child(odd) .image {
+    order: 1;
+  }
+
+  .area:nth-child(even) .text {
+    order: 1;
+  }
+
+  .area:nth-child(even) .image {
+    order: 2;
+  }
+}
