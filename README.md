@@ -1,0 +1,2 @@
+# storemio
+ progetto piattaforme web

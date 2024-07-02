@@ -1,0 +1,25 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5433/Articolisportivi-social-network
+        username: postgres
+        password: Andrea2019
+
+    jpa:
+        properties:
+            hibernate:
+                jdbc:
+                    lob:
+                        non_contextual_creation: true
+                dialect:
+                    org:
+                        hibernate:
+                            dialect: PostgreSQLDialect
+                ddl-auto: update
+
+
+com:
+    example:
+        storemio:
+            jwtSecret: cbkshdjbcsjdhbckjsdbckjsbdchjbbcjsbcjhscsdhvcksvdgcshvdck
+            jwtExpirationMs: 10800000 # 3 hours
+            jwtRememberExpirationMs: 1209600033 # 2 settimane
